@@ -2,27 +2,21 @@ import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import mapboxgl from "!mapbox-gl";
+import Header from "./components/Header/Header";
+import ActionButton from "./components/ActionButtons/ActionButton";
+import InputButton from "./components/InputButton/Input";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ";
+import Map from "./components/Map/Map";
 
 export default function Home() {
-  useEffect(() => {
-    const map = new mapboxgl.Map({
-      container: "map",
-      style: "mapbox://styles/mapbox/light-v10",
-      center: [-0.127758, 51.507351],
-      zoom: 9.5,
-    });
-  });
-
   return (
-    <div className={styles.container}>
-      <div id="map" className={styles.map}>
-        Map
+    <>
+      <Map />
+      <div className={styles.main__container}>
+        <Header />
+        <ActionButton />
+        <InputButton />
       </div>
-      <div className={styles.start}>Start</div>
-    </div>
+    </>
   );
 }
