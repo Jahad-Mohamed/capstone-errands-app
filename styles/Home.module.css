@@ -20,6 +20,8 @@
   flex: 1;
 }
 
+/*HEADER*/
+
 .Header__container {
   display: flex;
   justify-content: space-between;
@@ -39,7 +41,7 @@
 .Header__profileImage {
   display: flex;
   align-items: center;
-  height: 5rem;
+  height: 4rem;
   border-radius: 50%;
   border: solid 1px lightgray;
 }
@@ -53,6 +55,7 @@
   font-weight: 500;
 }
 
+/*ACTION BUTTON*/
 .actionButton__container {
   display: flex;
   justify-content: space-between;
@@ -82,6 +85,8 @@
   margin: 1rem;
 }
 
+/* INPUT BUTTON*/
+
 .inputButton__container {
   background-color: rgb(232, 249, 232);
   margin: 1rem;
@@ -95,4 +100,70 @@
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+/* SEARCH PAGE*/
+.search__container {
+  background-color: rgb(232, 249, 232);
+  height: 100vh;
+}
+
+.search__backButton {
+  background-color: white;
+  padding-left: 1rem;
+}
+
+.search__inputBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search__input {
+  height: 1rem;
+  margin: 0.8rem 1rem;
+  background-color: rgb(232, 249, 232);
+  border: none;
+  padding: 1.2rem 1rem;
+  outline: none;
+}
+
+.search__inputContainer {
+  background-color: white;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+.search__inputFrom {
+  height: 8rem;
+  width: 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search__iconLine {
+  height: 2.5rem;
+}
+
+.search__iconCircle {
+  height: 0.625rem;
+}
+
+.search__iconSquare {
+  height: 0.625rem;
+}
+
+.search__plus {
+  background-color: rgb(232, 249, 232);
+  border-radius: 50%;
+  height: 3.3rem;
+  width: 3.3rem;
+}
+
+.search__savedPlaces {
+}
+.search__confirmLocation {
 }

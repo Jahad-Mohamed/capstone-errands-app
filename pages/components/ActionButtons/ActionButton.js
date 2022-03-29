@@ -12,7 +12,7 @@ const ActionButton = () => {
             alt=""
             className={styles.actionButtonsImage}
           />
-          Errand
+          Groceries
         </div>
       </Link>
       {/* <Link> */}
@@ -22,7 +22,7 @@ const ActionButton = () => {
           alt=""
           className={styles.actionButtonsImage}
         />
-        Ride
+        Parcels
       </div>
       {/* </Link> */}
       {/* <Link> */}{" "}
@@ -32,7 +32,7 @@ const ActionButton = () => {
           alt=""
           className={styles.actionButtonsImage}
         />
-        reservce
+        Misscellaneous
       </div>
       {/* </Link> */}
     </div>
