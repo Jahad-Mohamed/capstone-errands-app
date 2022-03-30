@@ -18,11 +18,19 @@ const ActionButton = () => {
       {/* <Link> */}
       <div className={styles.actionButtons}>
         <img
-          src="https://i.ibb.co/cyvcpfF/uberx.png"
+          src="https://i.ibb.co/n776JLm/bike.png"
           alt=""
           className={styles.actionButtonsImage}
         />
         Parcels
+      </div>
+      <div className={styles.actionButtons}>
+        <img
+          src="https://i.ibb.co/cyvcpfF/uberx.png"
+          alt=""
+          className={styles.actionButtonsImage}
+        />
+        Rides
       </div>
       {/* </Link> */}
       {/* <Link> */}{" "}

@@ -11,8 +11,18 @@
 .map {
   background-color: rgb(212, 249, 212);
   flex: 1;
-  height: 40vh;
+  height: 60vh;
   overflow: hidden;
+  border: 5px solid;
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  position: relative;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .start {
@@ -58,7 +68,7 @@
 /*ACTION BUTTON*/
 .actionButton__container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: 0rem 1rem;
 }
@@ -69,14 +79,16 @@
   align-items: center;
   flex-direction: column;
   border-radius: 15%;
-  padding-bottom: 1rem;
+  padding: 1rem 2rem;
   transition: 0.3s;
 }
 
-.actionButtons:hover {
+.actionButtons:hover,
+.inputButton__container:hover {
   background-color: #3e8e41;
   color: white;
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .actionButtonsImage {
@@ -164,6 +176,60 @@
 }
 
 .search__savedPlaces {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+}
+
+.search__star {
+  background-color: rgb(22, 99, 22);
+  padding: 0.3rem;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
 }
 .search__confirmLocation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 131, 46);
+  border: solid 1px white;
+  color: white;
+  height: 2.5rem;
+  margin: 1rem 2rem;
+  transition: 0.3s;
+  bottom: 10px;
+}
+.search__confirmLocation:hover {
+  background-color: #146e17;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* CONFIRM PAGE*/
+.search__resultConfirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 131, 46);
+  border: solid 1px white;
+  color: white;
+  height: 2.5rem;
+  margin: 1rem 2rem;
+  transition: 0.3s;
+  bottom: 10px;
+}
+
+/*RIDE SELECTOR*/
+
+.rideSelector__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkgreen;
+  font-weight: 600;
 }

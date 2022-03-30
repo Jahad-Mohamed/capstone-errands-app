@@ -1,15 +1,18 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const search = () => {
   return (
     <div className={styles.search__container}>
-      <div className={styles.search__backButton}>
-        <img
-          src="https://img.icons8.com/ios-filled/50/000000/left.png"
-          alt="Back Button"
-        />
-      </div>
+      <Link href="/">
+        <div className={styles.search__backButton}>
+          <img
+            src="https://img.icons8.com/ios-filled/50/000000/left.png"
+            alt="Back Button"
+          />
+        </div>
+      </Link>
       <div className={styles.search__inputContainer}>
         <div className={styles.search__inputFrom}>
           <img
@@ -48,8 +51,15 @@ const search = () => {
         </div>
       </div>
 
-      <div className={styles.search__savedPlaces}></div>
-      <div className={styles.search__confirmLocation}></div>
+      <div className={styles.search__savedPlaces}>
+        <img
+          src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+          alt="Star Icon"
+          className={styles.search__star}
+        />
+        Saved Places
+      </div>
+      <div className={styles.search__confirmLocation}> Confirm Location</div>
     </div>
   );
 };
