@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
-import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { signInWithPopup, onAuthStateChanged } from "@firebase/auth";
 import { auth, provider } from "../../firebase";
 
 const Login = () => {
