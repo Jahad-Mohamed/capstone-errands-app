@@ -8,7 +8,7 @@ const ActionButton = () => {
       <Link href="./search">
         <div className={styles.actionButtons}>
           <img
-            src="https://i.ibb.co/n776JLm/bike.png"
+            src="https://i.ibb.co/mb3Ypq3/Output-onlinepngtools-1.png"
             alt=""
             className={styles.actionButtonsImage}
           />

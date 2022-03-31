@@ -1,26 +1,25 @@
 import React from "react";
 import { vehicleList } from "../../data/VehicleList";
+import styles from "../../../styles/Home.module.css";
 
 const RideSelector = () => {
   return (
-    <Wrapper>
-      <Title>Choose a ride, or swipe up for more</Title>
+    <div>
+      <div>Choose a ride, or swipe up for more</div>
 
-      <CarList>
+      <div className={styles.rideSelector__vehiclesContainer}>
         {vehicleList.map((car, index) => (
-          <Car key={index}>
-            <CarImage src={car.imgUrl} />
-            <CarDetails>
-              <Service className={styles.rideSelector__service}>
-                {car.service}
-              </Service>
-              <Time className={styles.rideSelector__time}>5 min away</Time>
-            </CarDetails>
-            <Price className={styles.rideSelector__price}>$24.00</Price>
-          </Car>
+          <div key={index}>
+            <img src={car.imgUrl} />
+            <div className={styles.rideSelector__carDetails}>
+              <div className={styles.rideSelector__div}>{car.service}</div>
+              <div className={styles.rideSelector__time}>5 min away</div>
+            </div>
+            <div className={styles.rideSelector__price}>£4.00</div>
+          </div>
         ))}
-      </CarList>
-    </Wrapper>
+      </div>
+    </div>
   );
 };
 

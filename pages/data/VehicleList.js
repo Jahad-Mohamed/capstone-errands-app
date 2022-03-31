@@ -1,7 +1,6 @@
 export const vehicleList = [
   {
-    imgUrl:
-      "https://images.ctfassets.net/tk7rwcciwvbq/4CAv1njQgXJvJlWukgADtH/05d7a166d4a78da0db2e2b97b1b8c874/category-scooter.png",
+    imgUrl: "https://i.ibb.co/mb3Ypq3/Output-onlinepngtools-1.png",
     service: "Scooter",
     multiplier: 1,
   },

@@ -14,6 +14,7 @@ const Map = () => {
       center: [-0.127758, 51.507351],
       zoom: 10,
     });
+
     const marker1 = new mapboxgl.Marker({ color: "blue" })
       .setLngLat([-0.024261, 51.545492])
       .addTo(map);

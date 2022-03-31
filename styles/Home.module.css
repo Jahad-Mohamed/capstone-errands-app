@@ -233,3 +233,8 @@
   color: darkgreen;
   font-weight: 600;
 }
+
+.rideSelector__vehiclesContainer {
+  display: flex;
+  flex-direction: column;
+}
