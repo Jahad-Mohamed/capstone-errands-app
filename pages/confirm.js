@@ -2,9 +2,12 @@ import React from "react";
 import styles from "../styles/Home.module.css";
 import Map from "../pages/components/Map/Map";
 import RideSelector from "../pages/components/RideSelector/RideSelector";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Confirm = () => {
+  const [pickUpCoordinates, setPickUpCoordinates] = useState();
+  const [dropOffCoordinates, setDropOffCoordinates] = useState();
+
   const getPickUpCoordinates = () => {
     const pickup = "Archway";
     fetch(
@@ -17,8 +20,7 @@ const Confirm = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("pickup");
-        console.log(data.features[0].center);
+        setPickUpCoordinates(data.features[0].center);
       });
   };
 
@@ -34,8 +36,7 @@ const Confirm = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("pickoff");
-        console.log(data.features[0].center);
+        setDropOffCoordinates(data.features[0].center);
       });
   };
 
@@ -48,6 +49,8 @@ const Confirm = () => {
     <div className={styles.search__container}>
       <Map />
       <div className={styles.search__resultContainer}>
+        {pickUpCoordinates}
+        {dropOffCoordinates}
         <RideSelector />
         <div className={styles.search__resultConfirm}> Confirm Journey</div>
       </div>
