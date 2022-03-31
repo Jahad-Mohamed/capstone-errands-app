@@ -17,11 +17,9 @@ const Map = (props) => {
 
     if (props.pickUpCoordinates) {
       addToMap(map, props.pickUpCoordinates);
-      console.log(pickUpCoordinates);
     }
     if (props.dropOffCoordinates) {
       addToMap(map, props.dropOffCoordinates);
-      console.log(dropOffCoordinates);
     }
 
     if (props.pickUpCoordinates && props.dropOffCoordinates) {

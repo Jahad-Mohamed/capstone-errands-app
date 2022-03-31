@@ -218,6 +218,7 @@
   margin: 1rem 2rem;
   transition: 0.3s;
   bottom: 10px;
+  cursor: pointer;
 }
 .search__confirmLocation:hover {
   background-color: #146e17;
@@ -295,4 +296,58 @@
   bottom: 10px;
   font-size: 1.6rem;
   font-weight: 600;
+}
+
+.search__backButtonContainer {
+  z-index: 10;
+  background-color: white;
+  border-radius: 25px;
+  top: 4px;
+  left: 4px;
+  position: absolute;
+}
+
+.search__backButton {
+  object-fit: contain;
+}
+
+/* login*/
+
+.login__container {
+  height: 100vh;
+  background-color: #fbf9f6;
+  padding: 2rem;
+}
+.login__button {
+  background-color: #146e17;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  height: 5rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.login__title {
+  margin: 2rem 0rem;
+  font-size: 3rem;
+}
+.login__heroContainer {
+  border: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.login__hero {
+  width: 60vw;
+  height: 30vh;
+}
+
+.login__logo {
+  width: 15vw;
+  height: 15vh;
 }

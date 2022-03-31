@@ -4,6 +4,7 @@ import Map from "../pages/components/Map/Map";
 import RideSelector from "../pages/components/RideSelector/RideSelector";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Confirm = () => {
   const router = useRouter();
@@ -12,8 +13,8 @@ const Confirm = () => {
   console.log("Pickup", pickup);
   console.log("Dropoff", dropoff);
 
-  const [pickUpCoordinates, setPickUpCoordinates] = useState();
-  const [dropOffCoordinates, setDropOffCoordinates] = useState();
+  const [pickUpCoordinates, setPickUpCoordinates] = useState([0, 0]);
+  const [dropOffCoordinates, setDropOffCoordinates] = useState([0, 0]);
 
   const getPickUpCoordinates = (pickup) => {
     fetch(
@@ -52,8 +53,23 @@ const Confirm = () => {
 
   return (
     <div className={styles.search__container}>
-      <Map /*{pickUpCoordinates} {dropOffCoordinates}*/ />
-      <RideSelector />
+      <div className={styles.search__backButtonContainer}>
+        <Link href="/search">
+          <img
+            src="https://img.icons8.com/ios-filled/50/000000/left.png"
+            alt="Back Button"
+            className={styles.search__backButton}
+          />
+        </Link>
+      </div>
+      <Map
+        pickUpCoordinates={pickUpCoordinates}
+        dropOffCoordinates={dropOffCoordinates}
+      />
+      <RideSelector
+        pickUpCoordinates={pickUpCoordinates}
+        dropOffCoordinates={dropOffCoordinates}
+      />
     </div>
   );
 };
