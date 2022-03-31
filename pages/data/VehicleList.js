@@ -1,8 +1,14 @@
 export const vehicleList = [
+  // {
+  //   imgUrl: "https://i.ibb.co/CwyrSGw/Lime-scooter.webp",
+  //   service: "Scooter",
+  //   multiplier: 1,
+  // },
+
   {
-    imgUrl: "https://i.ibb.co/mb3Ypq3/Output-onlinepngtools-1.png",
-    service: "Scooter",
-    multiplier: 1,
+    imgUrl: "https://i.ibb.co/n776JLm/bike.png",
+    service: "Bike",
+    multiplier: 1.5,
   },
   {
     imgUrl: "https://i.ibb.co/n776JLm/bike.png",

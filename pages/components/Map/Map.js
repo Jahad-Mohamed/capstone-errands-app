@@ -25,9 +25,10 @@ const Map = (props) => {
     }
 
     if (props.pickUpCoordinates && props.dropOffCoordinates) {
-      map.fitBounds([props.pickUpCoordinates, props.dropOffCoordinates], {
-        padding: 60,
-      });
+      map.fitBounds([
+        [props.pickUpCoordinates], // southwestern corner of the bounds
+        [props.dropOffCoordinates], // northeastern corner of the bounds
+      ]);
     }
   }, [props.pickUpCoordinates, props.dropOffCoordinates]);
 
@@ -36,9 +37,10 @@ const Map = (props) => {
     const marker1 = new mapboxgl.Marker({ color: "#FFFFFF" })
       .setLngLat(coordinates)
       .addTo(map);
+    console.log(coordinates);
   };
 
-  return <div id="map" className={styles.map}></div>;
+  return <div id="fit" id="map" className={styles.map}></div>;
 };
 
 export default Map;

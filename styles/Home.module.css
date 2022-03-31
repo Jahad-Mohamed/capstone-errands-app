@@ -11,7 +11,7 @@
 .map {
   background-color: rgb(212, 249, 212);
   flex: 1;
-  height: 60vh;
+  height: 50vh;
   overflow: hidden;
   border: 5px solid;
   border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
@@ -23,6 +23,21 @@
   top: 0;
   bottom: 0;
   width: 100%;
+}
+
+#fit {
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #ee8a65;
 }
 
 .start {
@@ -116,8 +131,8 @@
 
 /* SEARCH PAGE*/
 .search__container {
-  background-color: rgb(232, 249, 232);
   height: 100vh;
+  background-color: #fbf9f6;
 }
 
 .search__backButton {
@@ -210,6 +225,62 @@
   transform: scale(1.05);
 }
 
+/*RIDE SELECTOR*/
+
+.rideSelector__section {
+  background-color: #fbf9f6;
+  overflow-y: scroll;
+}
+
+.rideSelector__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkgreen;
+  font-weight: 600;
+  font-size: 20px;
+  height: 4vh;
+  border-bottom: 1px solid rgb(183, 248, 183);
+}
+
+.rideSelector__vehiclesContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  margin: 0rem 2rem;
+}
+
+.rideSelector__vehicles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5rem 0rem;
+}
+.rideSelector__vehicleImage {
+  height: 3.5rem;
+  margin-right: 1rem;
+}
+
+.rideSelector__carDetails {
+  flex: 1;
+}
+.rideSelector__service {
+  color: rgb(8, 41, 1);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.rideSelector__time {
+  color: rgb(175, 209, 168);
+}
+
+.rideSelector__price {
+  color: rgb(8, 41, 1);
+  font-size: 700;
+}
+
 /* CONFIRM PAGE*/
 .search__resultConfirm {
   display: flex;
@@ -218,23 +289,10 @@
   background-color: rgb(46, 131, 46);
   border: solid 1px white;
   color: white;
-  height: 2.5rem;
+  height: 4rem;
   margin: 1rem 2rem;
   transition: 0.3s;
   bottom: 10px;
-}
-
-/*RIDE SELECTOR*/
-
-.rideSelector__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: darkgreen;
+  font-size: 1.6rem;
   font-weight: 600;
-}
-
-.rideSelector__vehiclesContainer {
-  display: flex;
-  flex-direction: column;
 }

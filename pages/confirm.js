@@ -15,8 +15,7 @@ const Confirm = () => {
   const [pickUpCoordinates, setPickUpCoordinates] = useState();
   const [dropOffCoordinates, setDropOffCoordinates] = useState();
 
-  const getPickUpCoordinates = () => {
-    const pickup = "Archway";
+  const getPickUpCoordinates = (pickup) => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
         new URLSearchParams({
@@ -31,8 +30,7 @@ const Confirm = () => {
       });
   };
 
-  const getDropOffCoordinates = () => {
-    const dropoff = "shoreditch";
+  const getDropOffCoordinates = (dropoff) => {
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
         new URLSearchParams({
@@ -54,13 +52,8 @@ const Confirm = () => {
 
   return (
     <div className={styles.search__container}>
-      <Map />
-      <div className={styles.search__resultContainer}>
-        {pickUpCoordinates}
-        {dropOffCoordinates}
-        <RideSelector />
-        <div className={styles.search__resultConfirm}> Confirm Journey</div>
-      </div>
+      <Map /*{pickUpCoordinates} {dropOffCoordinates}*/ />
+      <RideSelector />
     </div>
   );
 };

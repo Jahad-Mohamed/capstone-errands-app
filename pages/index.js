@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Head>
         <link
-          href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
+          href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
           rel="stylesheet"
         />
       </Head>
