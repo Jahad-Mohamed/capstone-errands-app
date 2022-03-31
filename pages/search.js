@@ -1,8 +1,15 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import { useState } from "react";
 
 const search = () => {
+  const [pickup, setPickUp] = useState("");
+  const [dropoff, setDropOff] = useState("");
+
+  console.log(pickup);
+  console.log(dropoff);
+
   return (
     <div className={styles.search__container}>
       <Link href="/">
@@ -37,10 +44,14 @@ const search = () => {
           <input
             placeholder="Enter pickup location"
             className={styles.search__input}
+            value={pickup}
+            onChange={(e) => setPickUp(e.target.value)}
           />
           <input
             placeholder="Enter dropoff location"
             className={styles.search__input}
+            value={dropoff}
+            onChange={(e) => setDropOff(e.target.value)}
           />
         </div>
         <div className={styles.search__plus}>
@@ -59,16 +70,22 @@ const search = () => {
         />
         Saved Places
       </div>
-      <div className={styles.search__confirmLocation}> Confirm Location</div>
+      <Link
+        href={{
+          pathname: "/confirm",
+          query: {
+            pickup: pickup,
+            dropoff: dropoff,
+          },
+        }}
+      >
+        <div className={styles.search__confirmLocation}> Confirm Location</div>
+      </Link>
     </div>
   );
 };
 
 export default search;
 
-// .search__savedPlaces;
-// .search__confirmLocation;
-// .search__inputToo
-// .search__inputContainer
-// .search__inputFrom
-//
+/*
+ */

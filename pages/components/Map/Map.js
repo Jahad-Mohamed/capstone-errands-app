@@ -23,11 +23,19 @@ const Map = (props) => {
       addToMap(map, props.dropOffCoordinates);
       console.log(dropOffCoordinates);
     }
+
+    if (props.pickUpCoordinates && props.dropOffCoordinates) {
+      map.fitBounds([props.pickUpCoordinates, props.dropOffCoordinates], {
+        padding: 60,
+      });
+    }
   }, [props.pickUpCoordinates, props.dropOffCoordinates]);
 
   const addToMap = (map, coordinates) => {
     console.log("1" + coordinates);
-    const marker1 = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+    const marker1 = new mapboxgl.Marker({ color: "#FFFFFF" })
+      .setLngLat(coordinates)
+      .addTo(map);
   };
 
   return <div id="map" className={styles.map}></div>;
