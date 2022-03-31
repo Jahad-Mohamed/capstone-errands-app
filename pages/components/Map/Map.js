@@ -6,26 +6,30 @@ import { useEffect } from "react";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ";
 
-const Map = () => {
+const Map = (props) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-0.127758, 51.507351],
-      zoom: 10,
+      zoom: 11,
     });
 
-    const marker1 = new mapboxgl.Marker({ color: "blue" })
-      .setLngLat([-0.024261, 51.545492])
-      .addTo(map);
+    if (props.pickUpCoordinates) {
+      addToMap(map, props.pickUpCoordinates);
+      console.log(pickUpCoordinates);
+    }
+    if (props.dropOffCoordinates) {
+      addToMap(map, props.dropOffCoordinates);
+      console.log(dropOffCoordinates);
+    }
+  }, [props.pickUpCoordinates, props.dropOffCoordinates]);
 
-    const marker2 = new mapboxgl.Marker({ color: "black" })
-      .setLngLat([-0.083799, 51.52621])
-      .addTo(map);
-    // const marker2 = new mapboxgl.Marker({ color: "black" })
-    //   .setLngLat([-0.083799, 51.52621])
-    //   .addTo(map);
-  });
+  const addToMap = (map, coordinates) => {
+    console.log("1" + coordinates);
+    const marker1 = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+  };
+
   return <div id="map" className={styles.map}></div>;
 };
 
