@@ -3,8 +3,15 @@ import styles from "../styles/Home.module.css";
 import Map from "../pages/components/Map/Map";
 import RideSelector from "../pages/components/RideSelector/RideSelector";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Confirm = () => {
+  const router = useRouter();
+
+  const { pickup, dropoff } = router.query;
+  console.log("Pickup", pickup);
+  console.log("Dropoff", dropoff);
+
   const [pickUpCoordinates, setPickUpCoordinates] = useState();
   const [dropOffCoordinates, setDropOffCoordinates] = useState();
 
