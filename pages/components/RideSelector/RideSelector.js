@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { vehicleList } from "../../data/VehicleList";
+import { vehicleList } from "../../../data/VehicleList";
 import styles from "../../../styles/Home.module.css";
 
-const RideSelector = (pickUpCoordinates, dropOffCoordinates) => {
+const RideSelector = (props) => {
   const [rideDuration, setRideDuration] = useState(0);
 
   useEffect(() => {
-    rideDuration = fetch(
-      `https://api.mapbox.com/directions/v5/mapbox/driving/${pickUpCoordinates[0]},${pickUpCoordinates[1]};${dropOffCoordinates[0]},${dropOffCoordinates[1]}?access_token="pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ"`
+    console.log(props.pickUpCoordinates, props.dropOffCoordinates);
+
+    fetch(
+      `https://api.mapbox.com/directions/v5/mapbox/driving/${props.pickUpCoordinates[0]},${props.pickUpCoordinates[1]};${props.dropOffCoordinates[0]},${props.dropOffCoordinates[1]}?access_token=pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ`
     ).then((response) =>
       response.json().then((data) => {
-        setRideDuration(data.routes[0].duration / 100);
+        console.log(data);
+        if (data.code === "Ok") {
+          setRideDuration(data.routes[0].duration / 100);
+        }
       })
     );
-  }, [pickUpCoordinates, dropOffCoordinates]);
+  }, [props.pickUpCoordinates, props.dropOffCoordinates]);
 
   return (
     <div className={styles.rideSelector__section}>

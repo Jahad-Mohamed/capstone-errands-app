@@ -8,22 +8,22 @@ export const vehicleList = [
   {
     imgUrl: "https://i.ibb.co/n776JLm/bike.png",
     service: "Bike",
-    multiplier: 1.5,
+    multiplier: 1.1,
   },
   {
     imgUrl: "https://i.ibb.co/n776JLm/bike.png",
     service: "Bike",
-    multiplier: 1.5,
+    multiplier: 1.4,
   },
   {
     imgUrl: "https://i.ibb.co/Xx4G91m/uberblack.png",
     service: "Car",
-    multiplier: 2,
+    multiplier: 1.9,
   },
   {
     imgUrl: "https://i.ibb.co/cyvcpfF/uberx.png",
     service: "Van",
-    multiplier: 1.2,
+    multiplier: 2.4,
   },
   {
     imgUrl: "https://i.ibb.co/1nStPWT/uberblacksuv.png",

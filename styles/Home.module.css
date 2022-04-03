@@ -23,6 +23,7 @@
   top: 0;
   bottom: 0;
   width: 100%;
+  padding: 5rem;
 }
 
 #fit {
@@ -31,7 +32,7 @@
   margin: 0px auto;
   width: 50%;
   height: 40px;
-  padding: 10px;
+  padding: 50px;
   border: none;
   border-radius: 3px;
   font-size: 12px;
@@ -50,7 +51,8 @@
 .Header__container {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0rem;
+  height: 2rem;
+  margin: 2rem 1rem;
 }
 
 .Header__logo {
@@ -94,7 +96,7 @@
   align-items: center;
   flex-direction: column;
   border-radius: 15%;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   transition: 0.3s;
 }
 
@@ -311,28 +313,82 @@
   object-fit: contain;
 }
 
+.search__parcelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search__title {
+  display: flex;
+  justify-content: center;
+  color: rgb(46, 131, 46);
+}
+
 /* login*/
+
+.login__contentContainer {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 8rem 0rem;
+}
 
 .login__container {
   height: 100vh;
   background-color: #fbf9f6;
   padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
+
+.login__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__field {
+  height: 3rem;
+  width: 18rem;
+  margin: 1rem 0rem;
+}
+
+.login__submit {
+  height: 3.4rem;
+  width: 18rem;
+  margin: 1rem 0rem;
+  background-color: rgb(46, 131, 46);
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+.login__forgotPassword {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login__button {
   background-color: #146e17;
   color: white;
   display: flex;
+  align-content: center;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  height: 5rem;
+  font-size: 24px;
+  height: 3.4rem;
+  width: 18rem;
   cursor: pointer;
   border-radius: 10px;
+  margin: 0rem 6rem;
 }
 
 .login__title {
-  margin: 2rem 0rem;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .login__heroContainer {
   border: 1px;
@@ -350,4 +406,9 @@
 .login__logo {
   width: 15vw;
   height: 15vh;
+}
+
+.login__logoContainer {
+  background-color: #fbf9f6;
+  width: 100%;
 }

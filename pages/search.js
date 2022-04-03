@@ -20,6 +20,75 @@ const search = () => {
           />
         </div>
       </Link>
+      <div className={styles.search__parcelContainer}>
+        <h1 className={styles.search__title}>Parcels</h1>
+        <h3 className={styles.search__title}>Enter the size</h3>
+        <div className={styles.actionButton__container}>
+          <div className={styles.actionButtons}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Small
+          </div>
+          <div className={styles.actionButtons}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Medium
+          </div>
+          <div className={styles.actionButtons}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Large
+          </div>
+        </div>
+        <h3 className={styles.search__title}>Enter the weight</h3>
+        <div className={styles.actionButton__container}>
+          <div className={styles.actionButtons}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Under 5kg
+          </div>
+          <div className={styles.actionButtons}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Under 10kg
+          </div>
+          <div className={styles.actionButtons}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Under 20kg
+          </div>
+        </div>
+        <h3 className={styles.search__title}>Enter the value</h3>
+        <div className={styles.actionButton__container}>
+          <div className={styles.actionButtons}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Small
+          </div>
+        </div>
+      </div>
+
       <div className={styles.search__inputContainer}>
         <div className={styles.search__inputFrom}>
           <img
@@ -42,13 +111,13 @@ const search = () => {
         </div>
         <div className={styles.search__inputBox}>
           <input
-            placeholder="Enter pickup location"
+            placeholder="Pickup"
             className={styles.search__input}
             value={pickup}
             onChange={(e) => setPickUp(e.target.value)}
           />
           <input
-            placeholder="Enter dropoff location"
+            placeholder="Dropoff"
             className={styles.search__input}
             value={dropoff}
             onChange={(e) => setDropOff(e.target.value)}

@@ -12,9 +12,9 @@ const Map = (props) => {
       container: "map",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-0.127758, 51.507351],
-      zoom: 5,
+      zoom: 8,
     });
-
+    console.log(props);
     if (props.pickUpCoordinates) {
       addToMap(map, props.pickUpCoordinates);
     }
@@ -24,15 +24,15 @@ const Map = (props) => {
 
     if (props.pickUpCoordinates && props.dropOffCoordinates) {
       map.fitBounds([
-        [props.pickUpCoordinates], // southwestern corner of the bounds
-        [props.dropOffCoordinates], // northeastern corner of the bounds
+        props.pickUpCoordinates, // southwestern corner of the bounds
+        props.dropOffCoordinates, // northeastern corner of the bounds
       ]);
     }
   }, [props.pickUpCoordinates, props.dropOffCoordinates]);
 
   const addToMap = (map, coordinates) => {
     console.log("1" + coordinates);
-    const marker1 = new mapboxgl.Marker({ color: "#FFFFFF" })
+    const marker1 = new mapboxgl.Marker({ color: "blue" })
       .setLngLat(coordinates)
       .addTo(map);
     console.log(coordinates);

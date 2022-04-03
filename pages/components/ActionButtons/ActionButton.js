@@ -15,15 +15,16 @@ const ActionButton = () => {
           Groceries
         </div>
       </Link>
-      {/* <Link> */}
-      <div className={styles.actionButtons}>
-        <img
-          src="https://i.ibb.co/n776JLm/bike.png"
-          alt=""
-          className={styles.actionButtonsImage}
-        />
-        Parcels
-      </div>
+      <Link href="./search">
+        <div className={styles.actionButtons}>
+          <img
+            src="https://i.ibb.co/n776JLm/bike.png"
+            alt=""
+            className={styles.actionButtonsImage}
+          />
+          Parcels
+        </div>
+      </Link>
       <div className={styles.actionButtons}>
         <img
           src="https://i.ibb.co/cyvcpfF/uberx.png"
