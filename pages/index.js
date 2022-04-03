@@ -14,21 +14,6 @@ export default function Home() {
   const [user, setUser] = useState(null);
   const router = useRouter();
 
-  //Logout Function
-  // useEffect(() => {
-  //   return onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setUser({
-  //         name: user.displayName,
-  //         photoUrl: user.photoURL,
-  //       });
-  //     } else {
-  //       setUser(null);
-  //       router.push("/login");
-  //     }
-  //   });
-  // }, []);
-
   return (
     <>
       <Head>
@@ -40,9 +25,11 @@ export default function Home() {
 
       <div className={styles.main__container}>
         <Header />
-        <ActionButton />
-        <InputButton />
-        <Map />
+        <div className={styles.main__sectionContainer}>
+          <ActionButton />
+          <InputButton />
+          <Map />
+        </div>
       </div>
     </>
   );

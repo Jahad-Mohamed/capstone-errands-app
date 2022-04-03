@@ -36,7 +36,7 @@ const search = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
-              className={styles.actionButtonsImage}
+              className={styles.actionButtonsSmall}
             />
             Small
           </div>
@@ -51,7 +51,7 @@ const search = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
-              className={styles.actionButtonsImage}
+              className={styles.actionButtonsMedium}
             />
             Medium
           </div>
@@ -66,7 +66,7 @@ const search = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
-              className={styles.actionButtonsImage}
+              className={styles.actionButtonsLarge}
             />
             Large
           </div>
