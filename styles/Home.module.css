@@ -11,7 +11,7 @@
 .map {
   background-color: rgb(212, 249, 212);
   flex: 1;
-  height: 50vh;
+  height: 70vh;
   overflow: hidden;
   border: 5px solid;
   border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
@@ -23,9 +23,9 @@
   top: 0;
   bottom: 0;
   width: 100%;
+  min-height: 60vh;
   padding: 5rem;
 }
-
 #fit {
   display: block;
   position: relative;
@@ -100,6 +100,24 @@
   transition: 0.3s;
 }
 
+.active_size {
+  background-color: #3e8e41;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.active_weight {
+  background-color: #3e8e41;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.active_value {
+  background-color: #3e8e41;
+  color: white;
+  transform: scale(1.1);
+  cursor: pointer;
+}
 .actionButtons:hover,
 .inputButton__container:hover {
   background-color: #3e8e41;
@@ -259,6 +277,16 @@
   flex-direction: row;
   align-items: center;
   margin: 0.5rem 0rem;
+}
+.rideSelector__vehicles:hover {
+  background-color: #146e17;
+  transition: 1s all ease-in-out;
+  color: white;
+}
+.active_ride {
+  background-color: #146e17;
+  transition: 1s all ease-in-out;
+  color: white;
 }
 .rideSelector__vehicleImage {
   height: 3.5rem;

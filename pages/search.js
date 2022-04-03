@@ -7,8 +7,9 @@ const search = () => {
   const [pickup, setPickUp] = useState("");
   const [dropoff, setDropOff] = useState("");
 
-  console.log(pickup);
-  console.log(dropoff);
+  const [size, setSize] = useState("");
+  const [weight, setweight] = useState("");
+  const [value, setvalue] = useState("");
 
   return (
     <div className={styles.search__container}>
@@ -24,7 +25,14 @@ const search = () => {
         <h1 className={styles.search__title}>Parcels</h1>
         <h3 className={styles.search__title}>Enter the size</h3>
         <div className={styles.actionButton__container}>
-          <div className={styles.actionButtons}>
+          <div
+            className={`${styles.actionButtons} ${
+              size == 1 ? styles.active_size : ""
+            }`}
+            onClick={() => {
+              setSize(1);
+            }}
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
@@ -32,7 +40,14 @@ const search = () => {
             />
             Small
           </div>
-          <div className={styles.actionButtons}>
+          <div
+            className={`${styles.actionButtons} ${
+              size == 2 ? styles.active_size : ""
+            }`}
+            onClick={() => {
+              setSize(2);
+            }}
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
@@ -40,7 +55,14 @@ const search = () => {
             />
             Medium
           </div>
-          <div className={styles.actionButtons}>
+          <div
+            className={`${styles.actionButtons} ${
+              size == 3 ? styles.active_size : ""
+            }`}
+            onClick={() => {
+              setSize(3);
+            }}
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
@@ -51,7 +73,14 @@ const search = () => {
         </div>
         <h3 className={styles.search__title}>Enter the weight</h3>
         <div className={styles.actionButton__container}>
-          <div className={styles.actionButtons}>
+          <div
+            className={`${styles.actionButtons} ${
+              weight == 1 ? styles.active_weight : ""
+            }`}
+            onClick={() => {
+              setweight(1);
+            }}
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
@@ -59,7 +88,14 @@ const search = () => {
             />
             Under 5kg
           </div>
-          <div className={styles.actionButtons}>
+          <div
+            className={`${styles.actionButtons} ${
+              weight == 2 ? styles.active_weight : ""
+            }`}
+            onClick={() => {
+              setweight(2);
+            }}
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
@@ -67,7 +103,14 @@ const search = () => {
             />
             Under 10kg
           </div>
-          <div className={styles.actionButtons}>
+          <div
+            className={`${styles.actionButtons} ${
+              weight == 3 ? styles.active_weight : ""
+            }`}
+            onClick={() => {
+              setweight(3);
+            }}
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
@@ -78,7 +121,14 @@ const search = () => {
         </div>
         <h3 className={styles.search__title}>Enter the value</h3>
         <div className={styles.actionButton__container}>
-          <div className={styles.actionButtons}>
+          <div
+            className={`${styles.actionButtons} ${
+              value == 1 ? styles.active_value : ""
+            }`}
+            onClick={() => {
+              setvalue(1);
+            }}
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
@@ -139,17 +189,24 @@ const search = () => {
         />
         Saved Places
       </div>
-      <Link
-        href={{
-          pathname: "/confirm",
-          query: {
-            pickup: pickup,
-            dropoff: dropoff,
-          },
-        }}
-      >
-        <div className={styles.search__confirmLocation}> Confirm Location</div>
-      </Link>
+      {value && size && weight && pickup && dropoff ? (
+        <Link
+          href={{
+            pathname: "/confirm",
+            query: {
+              pickup: pickup,
+              dropoff: dropoff,
+            },
+          }}
+        >
+          <div className={styles.search__confirmLocation}>
+            {" "}
+            Confirm Location
+          </div>
+        </Link>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

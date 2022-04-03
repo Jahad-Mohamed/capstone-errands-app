@@ -4,10 +4,10 @@ import styles from "../../../styles/Home.module.css";
 
 const RideSelector = (props) => {
   const [rideDuration, setRideDuration] = useState(0);
+  const [rideDistance, setRideDistance] = useState(0);
+  const [ride, setRide] = useState();
 
   useEffect(() => {
-    console.log(props.pickUpCoordinates, props.dropOffCoordinates);
-
     fetch(
       `https://api.mapbox.com/directions/v5/mapbox/driving/${props.pickUpCoordinates[0]},${props.pickUpCoordinates[1]};${props.dropOffCoordinates[0]},${props.dropOffCoordinates[1]}?access_token=pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ`
     ).then((response) =>
@@ -15,6 +15,7 @@ const RideSelector = (props) => {
         console.log(data);
         if (data.code === "Ok") {
           setRideDuration(data.routes[0].duration / 100);
+          setRideDistance(data.routes[0].duration / 100);
         }
       })
     );
@@ -28,14 +29,22 @@ const RideSelector = (props) => {
 
       <div className={styles.rideSelector__vehiclesContainer}>
         {vehicleList.map((car, index) => (
-          <div className={styles.rideSelector__vehicles} key={index}>
+          <div
+            className={`${styles.rideSelector__vehicles} ${
+              ride - 1 == index ? styles.active_ride : ""
+            }`}
+            onClick={() => setRide(index + 1)}
+            key={index}
+          >
             <img
               src={car.imgUrl}
               className={styles.rideSelector__vehicleImage}
             />
             <div className={styles.rideSelector__carDetails}>
               <div className={styles.rideSelector__service}>{car.service}</div>
-              <div className={styles.rideSelector__time}>5 min away</div>
+              <div className={styles.rideSelector__time}>
+                {Math.floor(rideDuration)} min away
+              </div>
             </div>
             <div className={styles.rideSelector__price}>
               {"£" + (rideDuration * car.multiplier).toFixed(2)}
@@ -43,7 +52,11 @@ const RideSelector = (props) => {
           </div>
         ))}
       </div>
-      <div className={styles.search__resultConfirm}> Confirm Journey</div>
+      {ride ? (
+        <div className={styles.search__resultConfirm}> Confirm Journey</div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
