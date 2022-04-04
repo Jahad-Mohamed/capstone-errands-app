@@ -74,49 +74,34 @@ const search = () => {
         <h3 className={styles.search__title}>Enter the weight</h3>
         <div className={styles.actionButton__container}>
           <div
-            className={`${styles.actionButtons} ${
+            className={`${styles.actionButtonsWeight} ${
               weight == 1 ? styles.active_weight : ""
             }`}
             onClick={() => {
               setweight(1);
             }}
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-              alt=""
-              className={styles.actionButtonsImage}
-            />
-            Under 5kg
+            Under <br /> 5kg
           </div>
           <div
-            className={`${styles.actionButtons} ${
+            className={`${styles.actionButtonsWeight} ${
               weight == 2 ? styles.active_weight : ""
             }`}
             onClick={() => {
               setweight(2);
             }}
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-              alt=""
-              className={styles.actionButtonsImage}
-            />
-            Under 10kg
+            Under <br /> 10kg
           </div>
           <div
-            className={`${styles.actionButtons} ${
+            className={`${styles.actionButtonsWeight} ${
               weight == 3 ? styles.active_weight : ""
             }`}
             onClick={() => {
               setweight(3);
             }}
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-              alt=""
-              className={styles.actionButtonsImage}
-            />
-            Under 20kg
+            Under <br /> 20kg
           </div>
         </div>
         <h3 className={styles.search__title}>Enter the value</h3>

@@ -47,8 +47,8 @@ const Login = () => {
       </div>
 
       <div className={styles.login__container}>
+        <div className={styles.login__title}>Welcome back!</div>
         <div className={styles.login__contentContainer}>
-          <div className={styles.login__title}>Welcome back!</div>
           <div className={styles.login__details}>
             <input
               id="name"
@@ -73,8 +73,14 @@ const Login = () => {
             </button>
             <div className={styles.login__forgotPassword}>Forget Password?</div>
           </div>
-          <div> ----- OR -----</div>
+          <div className={styles.login_or}> ----- OR -----</div>
           <div onClick={signIn} className={styles.login__button}>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png"
+              width={30}
+              height={30}
+              alt="google icon"
+            />
             Sign in with Google
           </div>
         </div>
