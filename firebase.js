@@ -4,19 +4,6 @@
 // // TODO: Add SDKs for Firebase products that you want to use
 // // https://firebase.google.com/docs/web/setup#available-libraries
 
-// // Your web app's Firebase configuration
-// const firebaseConfig =
-// let app;
-// // Initialize Firebase
-// if (!getApps().length) {
-//   app = initializeApp(firebaseConfig);
-// }
-
-// const provider = new GoogleAuthProvider();
-// const auth = getAuth();
-
-// export { app, provider, auth };
-
 import { initializeApp, getApps } from "firebase/app";
 import "firebase/firestore";
 

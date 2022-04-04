@@ -43,6 +43,12 @@ const Header = () => {
       <div className={styles.Header__container}>
         <div className={styles.Header__logo}>LOGO HERE</div>
         <div className={styles.Header__profile}>
+          <Link href="./howitworks">
+            <div className={styles.Header__howItWorks}> How it works </div>
+          </Link>
+          <Link href="./about">
+            <div className={styles.Header__about}>About</div>
+          </Link>
           <div>
             {user ? (
               <h3 onClick={SignOut}>logout</h3>

@@ -35,7 +35,6 @@ const RideSelector = (props) => {
     const size = sizeList[props.size - 1];
     const weight = weightList[props.weight - 1];
     const value = props.value;
-    setRideDistance(rideDistance.toFixed(2));
 
     try {
       const docRef = await addDoc(collection(db, "orders"), {
@@ -62,7 +61,7 @@ const RideSelector = (props) => {
       `https://api.mapbox.com/directions/v5/mapbox/driving/${props.pickUpCoordinates[0]},${props.pickUpCoordinates[1]};${props.dropOffCoordinates[0]},${props.dropOffCoordinates[1]}?access_token=pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ`
     ).then((response) =>
       response.json().then((data) => {
-        console.log(data);
+        console.log("mydata", data);
         if (data.code === "Ok") {
           setRideDuration(data.routes[0].duration / 100);
           setRideDistance(data.routes[0].distance / 1000);
