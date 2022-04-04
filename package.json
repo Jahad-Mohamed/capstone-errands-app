@@ -30,5 +30,8 @@
     "country"
   ],
   "author": "Sammy <sammy@your_domain> (https://your_domain)",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "16.14.0"
+  }
 }
