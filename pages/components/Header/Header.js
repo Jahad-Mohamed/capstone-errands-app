@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "../../../styles/Home.module.css";
 import { useEffect, useState } from "react";
-import { auth } from "../../../firebase";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import firebaseApp from "../../../firebase";
+import { onAuthStateChanged, signOut, getAuth } from "firebase/auth";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Header = () => {
   const [user, setUser] = useState(null);
   const router = useRouter();
+  const auth = getAuth(firebaseApp);
 
   //Logout Function
   // useEffect(() => {
@@ -23,17 +25,38 @@ const Header = () => {
   //     }
   //   });
   // }, []);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user1) => {
+      if (user1) {
+        setUser(user1);
+        console.log(user1);
+      }
+    });
+  }, []);
+  const SignOut = async () => {
+    signOut(auth);
+
+    router.push("/login");
+  };
   return (
     <>
       <div className={styles.Header__container}>
         <div className={styles.Header__logo}>LOGO HERE</div>
         <div className={styles.Header__profile}>
-          <div className={styles.Header__profileName}>{user && user.name}</div>
+          <div>
+            {user ? (
+              <h3 onClick={SignOut}>logout</h3>
+            ) : (
+              <Link href="/login">Login</Link>
+            )}
+          </div>
+          <div className={styles.Header__profileName}>
+            {user && user.displayName}
+          </div>
           <img
-            src={user && user.photoUrl}
+            src={user && user.photoURL}
             alt="Profile Image"
             className={styles.Header__profileImage}
-            onClick={() => signOut(auth)}
           />
         </div>
       </div>
