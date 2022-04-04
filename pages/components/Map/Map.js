@@ -2,23 +2,22 @@ import React from "react";
 import styles from "../../../styles/Home.module.css";
 import mapboxgl from "!mapbox-gl";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ";
 
 const Map = (props) => {
-  const direct = async (props) => {};
+  const router = useRouter();
 
   useEffect(() => {
-    direct(props);
-
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-0.127758, 51.507351],
-      zoom: 10,
+      zoom: 6,
     });
-    console.log(props);
+
     if (props.pickUpCoordinates) {
       addToMap(map, props.pickUpCoordinates);
     }
@@ -26,13 +25,16 @@ const Map = (props) => {
       addToMap(map, props.dropOffCoordinates);
     }
 
-    if (props.pickUpCoordinates && props.dropOffCoordinates) {
-      map.fitBounds([
-        props.pickUpCoordinates, // southwestern corner of the bounds
-        props.dropOffCoordinates, // northeastern corner of the bounds
-      ]);
-    }
     map.addControl(new mapboxgl.NavigationControl());
+    props.pickUpCoordinates
+      ? map.fitBounds(
+          [
+            props.pickUpCoordinates, // southwestern corner of the bounds
+            props.dropOffCoordinates, // northeastern corner of the bounds
+          ],
+          { padding: 100 }
+        )
+      : "";
     async function getRoute(end) {
       // make a directions request using cycling profile
       // an arbitrary start will always be the same
@@ -85,40 +87,40 @@ const Map = (props) => {
       props.pickUpCoordinates ? getRoute(props.pickUpCoordinates) : "";
 
       // Add starting point to the map
-      map.addLayer({
-        id: "point",
-        type: "circle",
-        source: {
-          type: "geojson",
-          data: {
-            type: "FeatureCollection",
-            features: [
-              {
-                type: "Feature",
-                properties: {},
-                geometry: {
-                  type: "Point",
-                  coordinates: props.pickUpCoordinates,
-                },
+      props.pickUpCoordinates
+        ? map.addLayer({
+            id: "point",
+            type: "circle",
+            source: {
+              type: "geojson",
+              data: {
+                type: "FeatureCollection",
+                features: [
+                  {
+                    type: "Feature",
+                    properties: {},
+                    geometry: {
+                      type: "Point",
+                      coordinates: props.pickUpCoordinates,
+                    },
+                  },
+                ],
               },
-            ],
-          },
-        },
-        paint: {
-          "circle-radius": 10,
-          "circle-color": "#3887be",
-        },
-      });
+            },
+            paint: {
+              "circle-radius": 10,
+              "circle-color": "#3887be",
+            },
+          })
+        : "";
       // this is where the code from the next step will go
     });
   }, [props.pickUpCoordinates, props.dropOffCoordinates]);
 
   const addToMap = (map, coordinates) => {
-    console.log("1" + coordinates);
     const marker1 = new mapboxgl.Marker({ color: "blue" })
       .setLngLat(coordinates)
       .addTo(map);
-    console.log(coordinates);
   };
 
   return <div id="map" className={`${styles.map} ${styles.fit}`}></div>;
