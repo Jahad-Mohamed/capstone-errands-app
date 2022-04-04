@@ -11,6 +11,9 @@ const search = () => {
   const [weight, setweight] = useState("");
   const [value, setvalue] = useState("");
 
+  const handelChange = async (e) => {
+    setvalue(e.target.value);
+  };
   return (
     <div className={styles.search__container}>
       <Link href="/">
@@ -36,7 +39,7 @@ const search = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
-              className={styles.actionButtonsSmall}
+              className={styles.actionButtonsImage}
             />
             Small
           </div>
@@ -51,7 +54,7 @@ const search = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
-              className={styles.actionButtonsMedium}
+              className={styles.actionButtonsImage}
             />
             Medium
           </div>
@@ -66,7 +69,7 @@ const search = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
               alt=""
-              className={styles.actionButtonsLarge}
+              className={styles.actionButtonsImage}
             />
             Large
           </div>
@@ -74,34 +77,49 @@ const search = () => {
         <h3 className={styles.search__title}>Enter the weight</h3>
         <div className={styles.actionButton__container}>
           <div
-            className={`${styles.actionButtonsWeight} ${
+            className={`${styles.actionButtons} ${
               weight == 1 ? styles.active_weight : ""
             }`}
             onClick={() => {
               setweight(1);
             }}
           >
-            Under <br /> 5kg
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Under 5kg
           </div>
           <div
-            className={`${styles.actionButtonsWeight} ${
+            className={`${styles.actionButtons} ${
               weight == 2 ? styles.active_weight : ""
             }`}
             onClick={() => {
               setweight(2);
             }}
           >
-            Under <br /> 10kg
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Under 10kg
           </div>
           <div
-            className={`${styles.actionButtonsWeight} ${
+            className={`${styles.actionButtons} ${
               weight == 3 ? styles.active_weight : ""
             }`}
             onClick={() => {
               setweight(3);
             }}
           >
-            Under <br /> 20kg
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            />
+            Under 20kg
           </div>
         </div>
         <h3 className={styles.search__title}>Enter the value</h3>
@@ -114,12 +132,12 @@ const search = () => {
               setvalue(1);
             }}
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-              alt=""
-              className={styles.actionButtonsImage}
+            <input
+              type="number"
+              value={value}
+              onChange={handelChange}
+              placeholder="enter value ..."
             />
-            Small
           </div>
         </div>
       </div>
@@ -174,13 +192,16 @@ const search = () => {
         />
         Saved Places
       </div>
-      {value && size && weight && pickup && dropoff ? (
+      {value > 0 && value && size && weight && pickup && dropoff ? (
         <Link
           href={{
             pathname: "/confirm",
             query: {
               pickup: pickup,
               dropoff: dropoff,
+              value,
+              weight,
+              size,
             },
           }}
         >
