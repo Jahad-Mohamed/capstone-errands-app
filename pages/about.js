@@ -26,11 +26,13 @@ const about = () => {
             />
           </div>
           <div>
-            <img
-              src="https://www.pikpng.com/pngl/b/150-1506141_html-css-and-javascript-logo-html5-css3-js.png"
-              alt=""
-              className={styles.about__techStackLogo}
-            />
+            <>
+              <img
+                src="https://www.pikpng.com/pngl/b/150-1506141_html-css-and-javascript-logo-html5-css3-js.png"
+                alt=""
+                className={styles.about__techStackLogo}
+              />
+            </>
           </div>
           <span>
             <img src="https://www.pngegg.com/en/png-eoivg" alt="" />
