@@ -10,6 +10,7 @@ const Header = () => {
   const [user, setUser] = useState(null);
   const router = useRouter();
   const auth = getAuth(firebaseApp);
+  const [dropdown, setDropdown] = useState(false);
 
   //Logout Function
   // useEffect(() => {
@@ -33,6 +34,9 @@ const Header = () => {
       }
     });
   }, []);
+  const handleDropdown = async () => {
+    setDropdown(!dropdown);
+  };
   const SignOut = async () => {
     signOut(auth);
 
@@ -44,26 +48,45 @@ const Header = () => {
         <div className={styles.Header__logo}>LOGO HERE</div>
         <div className={styles.Header__profile}>
           <Link href="./howitworks">
-            <div className={styles.Header__howItWorks}> How it works </div>
+            <div className={styles.Header_howItworks}> How it works </div>
           </Link>
           <Link href="./about">
-            <div className={styles.Header__about}>About</div>
+            <div className={styles.Header__profile}>About</div>
           </Link>
-          <div>
-            {user ? (
-              <h3 onClick={SignOut}>logout</h3>
-            ) : (
-              <Link href="/login">Login</Link>
-            )}
-          </div>
+          <div></div>
           <div className={styles.Header__profileName}>
             {user && user.displayName}
           </div>
-          <img
-            src={user && user.photoURL}
-            alt="Profile Image"
-            className={styles.Header__profileImage}
-          />
+
+          {user ? (
+            <div className={styles.avatar}>
+              <img
+                onClick={handleDropdown}
+                src={user && user.photoURL}
+                alt="Profile Image"
+                className={styles.Header__profileImage}
+              />
+              {dropdown && (
+                <div className={styles.dropdown}>
+                  <h3>
+                    <Link href="/orderHistory">
+                      <span className={styles.dropdown_item}>
+                        Order History
+                      </span>
+                    </Link>
+                  </h3>
+                  <h3>
+                    <Link href="/account">Account</Link>
+                  </h3>
+                  <h3 onClick={SignOut}>logout</h3>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link href="/login">
+              <span className={styles.loginBtn}>Login</span>
+            </Link>
+          )}
         </div>
       </div>
     </>

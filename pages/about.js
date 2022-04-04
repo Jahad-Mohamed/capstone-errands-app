@@ -9,9 +9,9 @@ const about = () => {
       <p>
         This app was created and developed as part capstone project Web
         Development Diploma Programme at BrainStation . The concept of the app
-        began with a simple desire to save time and allowing youself to spend it
-        on the things you enjoy! Errands is a same-day service platform that
-        instantly connects you with skilled Taskers to help with odd-jobs and
+        began with a simple desire to save time and allowing yourself to spend
+        it on the things you enjoy! Errands is a same-day service platform that
+        instantly connects you with delivery partner to help with odd-jobs and
         errands, so you can be more productive, every day!
       </p>
       <div className={styles.about__techStackContainer}>
