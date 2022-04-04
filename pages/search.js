@@ -84,12 +84,8 @@ const search = () => {
               setweight(1);
             }}
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-              alt=""
-              className={styles.actionButtonsImage}
-            />
-            Under 5kg
+            <img src="" alt="" className={styles.actionButtonsImage} />
+            &#60; 5kg
           </div>
           <div
             className={`${styles.actionButtons} ${
@@ -99,12 +95,8 @@ const search = () => {
               setweight(2);
             }}
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-              alt=""
-              className={styles.actionButtonsImage}
-            />
-            Under 10kg
+            <img src="" alt="" className={styles.actionButtonsImage} />
+            &#60; 10kg
           </div>
           <div
             className={`${styles.actionButtons} ${
@@ -114,29 +106,24 @@ const search = () => {
               setweight(3);
             }}
           >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-              alt=""
-              className={styles.actionButtonsImage}
-            />
-            Under 20kg
+            <img src="" alt="" className={styles.actionButtonsImage} />
+            &#60; 20kg
           </div>
         </div>
         <h3 className={styles.search__title}>Enter the value</h3>
         <div className={styles.actionButton__container}>
           <div
-            className={`${styles.actionButtons} ${
-              value == 1 ? styles.active_value : ""
-            }`}
+            className={`${styles.value_textField} `}
             onClick={() => {
               setvalue(1);
             }}
           >
+            <span>&#163;</span>
             <input
               type="number"
               value={value}
               onChange={handelChange}
-              placeholder="enter value ..."
+              placeholder="  enter value ..."
             />
           </div>
         </div>

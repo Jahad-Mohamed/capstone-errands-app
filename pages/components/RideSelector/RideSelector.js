@@ -84,7 +84,7 @@ const RideSelector = (props) => {
             }`}
             onClick={() => {
               setRide(index + 1);
-              setPrice((rideDuration * car.multiplier).toFixed(2));
+              setPrice((5 * car.multiplier).toFixed(2));
             }}
             key={index}
           >
@@ -99,7 +99,7 @@ const RideSelector = (props) => {
               </div>
             </div>
             <div className={styles.rideSelector__price}>
-              {"£" + (rideDuration * car.multiplier).toFixed(2)}
+              {"£" + (5 * car.multiplier).toFixed(2)}
             </div>
           </div>
         ))}
