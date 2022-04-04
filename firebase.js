@@ -18,6 +18,7 @@
 // export { app, provider, auth };
 
 import { initializeApp, getApps } from "firebase/app";
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCCLDoR2__M0MVu2v9BHNi6xNwJS5Ng3h4",
