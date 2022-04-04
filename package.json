@@ -20,5 +20,15 @@
     "eslint": "7.32.0",
     "eslint-config-next": "12.1.2",
     "postcss": "^8.4.12"
-  }
+  },
+  "version": "1.0.0",
+  "description": "Finds the country of origin of the incoming request",
+  "main": "login.js",
+  "keywords": [
+    "ip",
+    "geo",
+    "country"
+  ],
+  "author": "Sammy <sammy@your_domain> (https://your_domain)",
+  "license": "ISC"
 }
