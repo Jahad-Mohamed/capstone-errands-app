@@ -23,7 +23,6 @@ const RideSelector = (props) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
       if (user) {
         setUser(user);
       }
@@ -33,9 +32,10 @@ const RideSelector = (props) => {
   const handleConfirm = async () => {
     const vehicle = vehicleList[ride - 1];
 
-    const size = sizeList[localStorage.getItem("size") - 1];
-    const weight = weightList[localStorage.getItem("weight") - 1];
-    const value = localStorage.getItem("value");
+    const size = sizeList[props.size - 1];
+    const weight = weightList[props.weight - 1];
+    const value = props.value;
+    setRideDistance(rideDistance.toFixed(2));
 
     try {
       const docRef = await addDoc(collection(db, "orders"), {

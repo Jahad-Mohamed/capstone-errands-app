@@ -12,6 +12,7 @@ const Confirm = () => {
 
   const [pickUpCoordinates, setPickUpCoordinates] = useState([0, 0]);
   const [dropOffCoordinates, setDropOffCoordinates] = useState([0, 0]);
+  const { pickup, dropoff, weight, size, value } = router.query;
 
   // const getPickUpCoordinates = (pickup) => {
   //   console.log(pickup);
@@ -46,9 +47,7 @@ const Confirm = () => {
   // };
 
   useEffect(() => {
-    const { pickup, dropoff } = router.query;
-    console.log("Pickup", pickup);
-    console.log("Dropoff", dropoff);
+    console.log(weight, value, size);
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
         new URLSearchParams({
@@ -100,6 +99,9 @@ const Confirm = () => {
         dropOffCoordinates={dropOffCoordinates}
       />
       <RideSelector
+        size={size}
+        weight={weight}
+        value={value}
         pickUpCoordinates={pickUpCoordinates}
         dropOffCoordinates={dropOffCoordinates}
       />
