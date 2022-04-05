@@ -576,3 +576,42 @@
     width: 90%;
   }
 }
+
+.howItWorks__container {
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.howItWorks__pageContainer {
+  background-color: #c0cfff;
+}
+
+.howItWorks__image {
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+.howItWorks__step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0rem 12rem;
+  margin: 2rem 0rem;
+}
+
+.howItWorks__text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 3rem 2rem;
+  justify-content: flex-end;
+}
+
+.howItWorks__para {
+  font-size: 1rem;
+  margin-top: 1rem;
+}

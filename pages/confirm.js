@@ -14,38 +14,6 @@ const Confirm = () => {
   const [dropOffCoordinates, setDropOffCoordinates] = useState([0, 0]);
   const { pickup, dropoff, weight, size, value } = router.query;
 
-  // const getPickUpCoordinates = (pickup) => {
-  //   console.log(pickup);
-  //   // fetch(
-  //   //   `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
-  //     new URLSearchParams({
-  //       access_token:
-  //         "pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ",
-  //       limit: 1,
-  //     })
-  // )
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     setPickUpCoordinates(data.features[0].center);
-  //   });
-  // };
-
-  // const getDropOffCoordinates = (dropoff) => {
-  //   console.log(dropoff);
-  // fetch(
-  //   `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
-  //     new URLSearchParams({
-  //       access_token:
-  //         "pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ",
-  //       limit: 1,
-  //     })
-  // )
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     setDropOffCoordinates(data.features[0].center);
-  //   });
-  // };
-
   useEffect(() => {
     console.log(weight, value, size);
     fetch(
