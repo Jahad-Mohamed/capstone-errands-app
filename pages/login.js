@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import {
   signInWithPopup,
   signOut,
@@ -37,13 +38,11 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className={styles.loginPage}>
       <div className={styles.login__logoContainer}>
-        <img
-          src="https://i.ibb.co/n776JLm/bike.png"
-          alt="Logo"
-          className={styles.login__logo}
-        />
+        <div className={styles.Header__logo}>
+          <Link href={"/"}>Errands</Link>
+        </div>
       </div>
 
       <div className={styles.login__container}>
@@ -54,7 +53,7 @@ const Login = () => {
               id="name"
               type="text"
               autoComplete="name"
-              placeholder="user"
+              placeholder="Email"
               required
               className={styles.login__field}
             />
@@ -67,13 +66,12 @@ const Login = () => {
               className={styles.login__field}
             />
           </div>
-          <div className={styles.login__details}>
-            <button type="submit" className={styles.login__submit}>
-              Sign In
-            </button>
-            <div className={styles.login__forgotPassword}>Forget Password?</div>
-          </div>
-          <div className={styles.login_or}> ----- OR -----</div>
+          <button type="submit" className={styles.login__submit}>
+            Sign In
+          </button>
+          <div className={styles.login__forgotPassword}>Forget Password?</div>
+
+          <div className={styles.login_or}>OR</div>
           <div onClick={signIn} className={styles.login__button}>
             <img
               src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png"

@@ -1,5 +1,4 @@
 .main__container {
-  padding: 2rem;
 }
 
 .container {
@@ -49,16 +48,38 @@
 /*HEADER*/
 
 .Header__container {
+  padding: 0.5rem 3rem;
   display: flex;
   justify-content: space-between;
-  height: 2rem;
-  margin: 2rem 1rem;
+  align-items: center;
+  min-height: 2rem;
+  max-height: 8rem;
+  margin: 0 1rem;
+}
+.Header_howItworks,
+.Header__profile {
+  font-size: large;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  color: #4f7df3;
 }
 
 .Header__logo {
-  height: 8rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: larger;
+  color: #4f7df3;
 }
-
+.actionButton__title {
+  text-align: center;
+  color: white;
+  padding-top: 1rem;
+}
 .Header__profile {
   display: flex;
   align-items: center;
@@ -90,8 +111,19 @@
   margin: 0rem 1rem;
 }
 
-.actionButtons {
+.actionButtons_search {
+  width: 25%;
+
   background-color: rgb(232, 249, 232);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15%;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+.actionButtons {
+  background-color: 749bfe;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -101,41 +133,53 @@
 }
 
 .active_size {
-  background-color: #3e8e41;
+  background-color: #749bfe;
   color: white;
   transform: scale(1.1);
   cursor: pointer;
 }
 .active_weight {
-  background-color: #3e8e41;
+  background-color: #749bfe;
   color: white;
   transform: scale(1.1);
   cursor: pointer;
 }
 .active_value {
-  background-color: #3e8e41;
+  background-color: #749bfe;
   color: white;
   transform: scale(1.1);
   cursor: pointer;
 }
 .actionButtons:hover,
 .inputButton__container:hover {
-  background-color: #3e8e41;
+  background-color: #749bfe;
   color: white;
   transform: scale(1.1);
   cursor: pointer;
 }
+.actionButtons_search:hover,
+.inputButton__container:hover {
+  background-color: #749bfe;
+  color: white;
+  transform: scale(1.01);
+  cursor: pointer;
+}
 
 .actionButtonsImage {
-  height: 4rem;
-  width: 5rem;
-  margin: 1rem;
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+}
+.actionButtons_Image {
+  height: 8rem;
+  width: 8rem;
+  object-fit: cover;
 }
 
 /* INPUT BUTTON*/
 
 .inputButton__container {
-  background-color: rgb(232, 249, 232);
+  background-color: #749bfe;
   margin: 1rem;
   height: 10vh;
 }
@@ -151,10 +195,55 @@
 
 /* SEARCH PAGE*/
 .search__container {
-  height: 100vh;
-  background-color: #fbf9f6;
-}
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(180deg, #adc0ff 75%, rgba(192, 207, 255, 0) 100%);
+  display: flex;
+  justify-content: center;
 
+  align-items: center;
+}
+.modal {
+  width: 40%;
+  height: 70%;
+  background-color: white;
+  border: 1px solid #000;
+  border-radius: 16px;
+  position: relative;
+}
+.confirm_btn {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 30px;
+}
+.confirm_btn button {
+  width: 80%;
+  background-color: #749bfe;
+  color: white;
+  font-size: x-large;
+  border: none;
+  outline: none;
+  padding: 7px 0;
+}
+.modal_indicators {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.modal_indicators span {
+  margin-right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #c0cfff;
+  color: transparent;
+}
+.active_span {
+  background-color: #3e8e41;
+}
 .search__backButton {
   display: flex;
   align-items: center;
@@ -233,7 +322,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(46, 131, 46);
+  background-color: #749bfe;
   border: solid 1px white;
   color: white;
   height: 2.5rem;
@@ -243,7 +332,7 @@
   cursor: pointer;
 }
 .search__confirmLocation:hover {
-  background-color: #146e17;
+  background-color: #4f7df3;
   color: white;
   transform: scale(1.05);
 }
@@ -270,23 +359,26 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1rem;
-  margin: 0rem 2rem;
+
+  margin: 0rem;
 }
 
 .rideSelector__vehicles {
+  padding: 0 0.5rem;
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin: 0.5rem 0rem;
 }
 .rideSelector__vehicles:hover {
-  background-color: #146e17;
+  background-color: #749bfe;
   transition: 1s all ease-in-out;
   color: white;
 }
 .active_ride {
-  background-color: #146e17;
+  background-color: #749bfe;
   transition: 1s all ease-in-out;
   color: white;
 }
@@ -312,6 +404,7 @@
 .rideSelector__price {
   color: rgb(8, 41, 1);
   font-size: 700;
+  margin-left: 3rem;
 }
 
 /* CONFIRM PAGE*/
@@ -319,7 +412,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(46, 131, 46);
+  background-color: #749bfe;
   border: solid 1px white;
   color: white;
   height: 4rem;
@@ -353,13 +446,13 @@
 .search__title {
   display: flex;
   justify-content: center;
-  color: rgb(46, 131, 46);
+  color: #749bfe;
 }
 
 /* login*/
 
 .login__contentContainer {
-  border: 1px solid black;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -368,58 +461,73 @@
 }
 
 .login__container {
-  height: 100vh;
+  width: 35%;
+  height: 60%;
   background-color: #fbf9f6;
   padding: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  border-radius: 16px;
 }
 
 .login__details {
   display: flex;
   flex-direction: column;
+  margin-top: -4rem;
 }
 
 .login__field {
   height: 3rem;
   width: 18rem;
   margin: 1rem 0rem;
+  border: 2px solid #a4a4a4;
+  border-radius: 8px;
+  padding: 18px 15px;
 }
 
 .login__submit {
   height: 3.4rem;
   width: 18rem;
   margin: 1rem 0rem;
-  background-color: rgb(46, 131, 46);
+  background-color: #749bfe;
   color: #fff;
-  font-size: 25px;
+  font-size: large;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
 }
 .login__forgotPassword {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #749bfe;
+  cursor: pointer;
 }
 
 .login__button {
-  background-color: #146e17;
+  background-color: #749bfe;
   color: white;
   display: flex;
   align-content: center;
   align-items: center;
+  gap: 10px;
   justify-content: center;
   font-size: 24px;
   height: 3.4rem;
   width: 18rem;
   cursor: pointer;
   border-radius: 10px;
-  margin: 0rem 6rem;
+  margin-top: 1rem;
+  font-size: large;
 }
 
 .login__title {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
 }
 .login__heroContainer {
   border: 1px;
@@ -438,15 +546,59 @@
   width: 15vw;
   height: 15vh;
 }
-
-.login__logoContainer {
-  background-color: #fbf9f6;
+.loginPage {
   width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #749bfe;
+  overflow-x: hidden;
+}
+.login__logoContainer {
+  margin: 2rem;
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.login__logoContainer .Header__logo {
+  font-size: x-large;
+  font-weight: 500;
+  color: white;
 }
 .value_textField {
-  width: 20rem;
+  width: 80%;
   position: relative;
+  padding: 12px, 29px, 12px, 29px;
+  border: 2px solid #a4a4a4;
 }
+.info_textField {
+  width: 80%;
+  position: relative;
+  padding: 12px, 23px, 12px, 23px;
+  border: 2px solid #a4a4a4;
+}
+
+.info_textField input {
+  width: 100%;
+  height: 5rem;
+  padding-left: 2rem;
+  border: none;
+  outline: none;
+  background-color: #e8f9e8;
+  border-radius: 5px;
+}
+.value_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .value_textField input {
   width: 100%;
   height: 2.5rem;
@@ -458,7 +610,7 @@
 }
 
 .value_textField span {
-  background-color: #3e8e41;
+  background-color: #749bfe;
   color: white;
   font-weight: bold;
   padding: 7px 10px;
@@ -473,6 +625,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(180deg, #adc0ff 75%, rgba(192, 207, 255, 0) 100%);
 }
 .center_div {
   width: 40%;
@@ -483,12 +636,12 @@
   padding: 0 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
-  background-color: #e8f9e8;
+  background-color: white;
 }
 .center_div h2 {
   width: 100%;
-  color: #146e17;
-  border-bottom: 1px solid #146e17;
+  color: #749bfe;
+  border-bottom: 1px solid #749bfe;
 }
 .center_div div {
   width: 100%;
@@ -523,7 +676,7 @@
   position: absolute;
   width: 150px;
   height: 150px;
-  background-color: #3e8e41;
+  background-color: #749bfe;
   z-index: 99;
   top: 70px;
   right: 5px;
@@ -542,11 +695,11 @@
 }
 .dropdown h3:hover {
   background-color: #e8f9e8;
-  color: #3e8e41;
+  color: #749bfe;
 }
 .dropdown_item:hover {
   background-color: #e8f9e8;
-  color: #3e8e41;
+  color: #749bfe;
 }
 .loginBtn {
   font-weight: bold;
@@ -556,13 +709,34 @@
 .loader {
   position: absolute;
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3e8e41; /* Blue */
+  border-top: 16px solid #749bfe; /* Blue */
   border-radius: 50%;
   width: 100px;
   height: 100px;
   animation: spin 2s linear infinite;
 }
+.header_links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.action_container {
+}
+.main__sectionContainer {
+  background: linear-gradient(180deg, #adc0ff 75%, rgba(192, 207, 255, 0) 100%);
+  margin: 0;
+}
 
+.maps_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 3rem;
+  overflow: auto;
+  transform: translateY(5rem);
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -575,18 +749,26 @@
   .center_div {
     width: 90%;
   }
+  .modal {
+    width: 90%;
+  }
+}
+
+.howItWorks__title {
+  color: #4973fc;
 }
 
 .howItWorks__container {
-  margin: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: white;
+  border-radius: 5%;
 }
 .howItWorks__pageContainer {
   background-color: #c0cfff;
+  padding: 7rem;
 }
 
 .howItWorks__image {
@@ -609,6 +791,7 @@
   font-weight: 600;
   margin: 3rem 2rem;
   justify-content: flex-end;
+  color: rgb(78, 77, 77);
 }
 
 .howItWorks__para {

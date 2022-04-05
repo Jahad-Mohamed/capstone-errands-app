@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const ActionButton = () => {
   return (
-    <>
+    <div className={styles.action_container}>
       <h1 className={styles.actionButton__title}>
-        Start by choosing the errand you would like ...
+        What’s the errand for today?
       </h1>
       <div className={styles.actionButton__container}>
         <Link href="./search">
@@ -14,7 +14,7 @@ const ActionButton = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/3724/3724788.png"
               alt=""
-              className={styles.actionButtonsImage}
+              className={styles.actionButtons_Image}
             />
             Groceries
           </div>
@@ -24,7 +24,7 @@ const ActionButton = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/2312/2312939.png"
               alt=""
-              className={styles.actionButtonsImage}
+              className={styles.actionButtons_Image}
             />
             Parcels
           </div>
@@ -33,7 +33,7 @@ const ActionButton = () => {
           <img
             src="https://cdn-icons-png.flaticon.com/512/741/741407.png"
             alt=""
-            className={styles.actionButtonsImage}
+            className={styles.actionButtons_Image}
           />
           Rides
         </div>
@@ -43,13 +43,13 @@ const ActionButton = () => {
           <img
             src="https://cdn.dribbble.com/users/77598/screenshots/7958090/media/9dfda44bd1e8b288602cd465655e7a36.png"
             alt=""
-            className={styles.actionButtonsImage}
+            className={styles.actionButtons_Image}
           />
           Misscellaneous
         </div>
         {/* </Link> */}
       </div>
-    </>
+    </div>
   );
 };
 
