@@ -15,7 +15,7 @@ const Map = (props) => {
       container: "map",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-0.127758, 51.507351],
-      zoom: 6,
+      zoom: 10,
     });
 
     if (props.pickUpCoordinates) {

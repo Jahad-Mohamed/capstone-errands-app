@@ -22,12 +22,13 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-
+      <Header />
       <div className={styles.main__container}>
-        <Header />
         <div className={styles.main__sectionContainer}>
-          <ActionButton />
-          <InputButton />
+          <div className={styles.main__actionBtnContainer}>
+            <ActionButton />
+          </div>
+
           <Map />
         </div>
       </div>

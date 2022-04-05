@@ -20,12 +20,12 @@ export const vehicleList = [
     imgUrl:
       "https://cdn-icons.flaticon.com/png/512/4277/premium/4277309.png?token=exp=1649087307~hmac=d971aa1bda4619e054e3dc487eb381cc",
     service: "Electric Car",
-    multiplier: 1.9,
+    multiplier: 1.8,
   },
   {
     imgUrl:
       "https://cdn-icons.flaticon.com/png/512/2017/premium/2017891.png?token=exp=1649087427~hmac=5fd5d4214c7f5a9d9a1c3e8cf34451be",
     service: "Electric Van",
-    multiplier: 2.4,
+    multiplier: 1.8,
   },
 ];

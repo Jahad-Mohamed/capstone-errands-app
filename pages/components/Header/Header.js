@@ -45,48 +45,52 @@ const Header = () => {
   return (
     <>
       <div className={styles.Header__container}>
-        <div className={styles.Header__logo}>LOGO HERE</div>
+        <div className={styles.Header__logo}>
+          <Link href={"/"}>Errands</Link>
+        </div>
         <div className={styles.Header__profile}>
-          <Link href="./howitworks">
-            <div className={styles.Header_howItworks}> How it works </div>
-          </Link>
-          <Link href="./about">
-            <div className={styles.Header__profile}>About</div>
-          </Link>
-          <div></div>
-          <div className={styles.Header__profileName}>
-            {user && user.displayName}
-          </div>
-
-          {user ? (
-            <div className={styles.avatar}>
-              <img
-                onClick={handleDropdown}
-                src={user && user.photoURL}
-                alt="Profile Image"
-                className={styles.Header__profileImage}
-              />
-              {dropdown && (
-                <div className={styles.dropdown}>
-                  <h3>
-                    <Link href="/orderHistory">
-                      <span className={styles.dropdown_item}>
-                        Order History
-                      </span>
-                    </Link>
-                  </h3>
-                  <h3>
-                    <Link href="/account">Account</Link>
-                  </h3>
-                  <h3 onClick={SignOut}>logout</h3>
-                </div>
-              )}
-            </div>
-          ) : (
-            <Link href="/login">
-              <span className={styles.loginBtn}>Login</span>
+          <div className={styles.header_links}>
+            <Link href="./howitworks">
+              <div className={styles.Header_howItworks}> How it works </div>
             </Link>
-          )}
+            <Link href="./about">
+              <div className={styles.Header__profile}>About</div>
+            </Link>
+
+            {/* <div className={styles.Header__profileName}>
+            {user && user.displayName}
+          </div> */}
+
+            {user ? (
+              <div className={styles.avatar}>
+                <img
+                  onClick={handleDropdown}
+                  src={user && user.photoURL}
+                  alt="Profile Image"
+                  className={styles.Header__profileImage}
+                />
+                {dropdown && (
+                  <div className={styles.dropdown}>
+                    <h3>
+                      <Link href="/orderHistory">
+                        <span className={styles.dropdown_item}>
+                          Order History
+                        </span>
+                      </Link>
+                    </h3>
+                    <h3>
+                      <Link href="/account">Account</Link>
+                    </h3>
+                    <h3 onClick={SignOut}>logout</h3>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link href="/login">
+                <span className={styles.loginBtn}>Login</span>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </>

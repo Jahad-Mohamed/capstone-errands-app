@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { onAuthStateChanged, GoogleAuthProvider, getAuth } from "firebase/auth";
 
 const sizeList = ["small", "medium", "large"];
-const weightList = ["under5KG", "under10KG", "under15KG"];
+const weightList = ["< 5KG", "< 10KG", "< 15KG"];
 const RideSelector = (props) => {
   const [rideDuration, setRideDuration] = useState(0);
   const [rideDistance, setRideDistance] = useState(0);
@@ -61,7 +61,7 @@ const RideSelector = (props) => {
       `https://api.mapbox.com/directions/v5/mapbox/driving/${props.pickUpCoordinates[0]},${props.pickUpCoordinates[1]};${props.dropOffCoordinates[0]},${props.dropOffCoordinates[1]}?access_token=pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ`
     ).then((response) =>
       response.json().then((data) => {
-        console.log("mydata", data);
+        console.log(data);
         if (data.code === "Ok") {
           setRideDuration(data.routes[0].duration / 100);
           setRideDistance(data.routes[0].distance / 1000);
@@ -95,11 +95,17 @@ const RideSelector = (props) => {
             <div className={styles.rideSelector__carDetails}>
               <div className={styles.rideSelector__service}>{car.service}</div>
               <div className={styles.rideSelector__time}>
-                {Math.floor(rideDuration)} min away
+                Your ride is {Math.floor(Math.random(15) * 10 + 4)} min away
               </div>
             </div>
+            <div>
+              {" "}
+              You errand will take{" "}
+              {Math.floor((rideDistance * 4) / car.multiplier)} mins tocomplete
+            </div>
+
             <div className={styles.rideSelector__price}>
-              {"£" + (5 * car.multiplier).toFixed(2)}
+              {"£" + (car.multiplier * 5).toFixed(2)}
             </div>
           </div>
         ))}
