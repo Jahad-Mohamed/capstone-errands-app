@@ -18,7 +18,7 @@
   border: 5px solid white;
   border-radius: 3%;
   position: relative;
-  margin: 6rem;
+  margin: 4rem 6rem;
 }
 
 #map {
@@ -76,13 +76,14 @@
   display: flex;
   align-items: center;
   font-weight: bold;
-  font-size: larger;
+  font-size: 30px;
   color: #4f7df3;
 }
 .actionButton__title {
   text-align: center;
   color: white;
-  padding-top: 1rem;
+  padding-top: 3rem;
+  margin: 0rem;
 }
 .Header__profile {
   display: flex;
@@ -112,7 +113,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 7rem 1rem;
+  margin: 4rem 1rem;
 }
 
 .actionButtons_search {
