@@ -12,7 +12,7 @@ const Map = (props) => {
 
   useEffect(() => {
     const map = new mapboxgl.Map({
-      container: "map",
+      container: "map2",
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-0.127758, 51.507351],
       zoom: 10,
@@ -139,7 +139,7 @@ const Map = (props) => {
       .addTo(map);
   };
 
-  return <div id="map" className={`${styles.map} ${styles.fit}`}></div>;
+  return <div id="map2" className={`${styles.map2} ${styles.fit2}`}></div>;
 };
 
 export default Map;

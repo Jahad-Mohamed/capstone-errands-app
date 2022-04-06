@@ -1,10 +1,4 @@
 export const vehicleList = [
-  // {
-  //   imgUrl: "https://i.ibb.co/CwyrSGw/Lime-scooter.webp",
-  //   service: "Scooter",
-  //   multiplier: 1,
-  // },
-
   {
     imgUrl:
       "https://cdn-icons.flaticon.com/png/512/3283/premium/3283542.png?token=exp=1649087099~hmac=95736081a94ae8ef95e26a4fc0dc9687",

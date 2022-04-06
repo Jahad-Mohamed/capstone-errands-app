@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import Header from "./components/Header/Header";
+import { Head } from "next/document";
 
 const search = () => {
   const [pickup, setPickUp] = useState("");
@@ -12,6 +13,8 @@ const search = () => {
   const [size, setSize] = useState("");
   const [weight, setweight] = useState("");
   const [value, setvalue] = useState("");
+  const [value1, setValue1] = useState("");
+  const [info, setInfo] = useState("");
 
   const changeModal = async () => {
     setScreen(screen + 1);
@@ -19,6 +22,40 @@ const search = () => {
   const handelChange = async (e) => {
     setvalue(e.target.value);
   };
+  const handleValue = (e) => {
+    setValue1(e.target.value);
+  };
+  const handleInfo = (e) => {
+    setInfo(e.target.value);
+  };
+
+  // const [address, setAddress] = React.useState("");
+  // const [coordinates, setCoordinates] = React.useState({
+  //   lat: null,
+  //   lng: null
+  // });
+
+  // const handleSelect = async value => {
+  //   const results = await geocodeByAddress(value);
+  //   const latLng = await getLatLng(results[0]);
+  //   setAddress(value);
+  //   setCoordinates(latLng);
+  // };
+
+  // mapboxgl.accessToken = 'pk.eyJ1IjoiamF5YmFubmtzIiwiYSI6ImNsMWM1OXUzaDA0YzczanA0emZ3bmFkNXcifQ.8X8knS_wMIwru9_uHZRERQ';
+  // const map = new mapboxgl.Map({
+  // container: 'map',
+  // style: 'mapbox://styles/mapbox/streets-v11',
+  // center: [-79.4512, 43.6568],
+  // zoom: 13
+  // });
+
+  // // Add the control to the map.
+  // const geocoder = new MapboxGeocoder({
+  // accessToken: mapboxgl.accessToken,
+  // mapboxgl: mapboxgl
+  // });
+
   return (
     <>
       <Header />
@@ -51,11 +88,11 @@ const search = () => {
                     setSize(1);
                   }}
                 >
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-                    alt=""
-                    className={styles.actionButtonsImage}
-                  />
+                  {/* <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            /> */}
                   Small
                 </div>
                 <div
@@ -66,11 +103,11 @@ const search = () => {
                     setSize(2);
                   }}
                 >
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-                    alt=""
-                    className={styles.actionButtonsImage}
-                  />
+                  {/* <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            /> */}
                   Medium
                 </div>
                 <div
@@ -81,11 +118,11 @@ const search = () => {
                     setSize(3);
                   }}
                 >
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
-                    alt=""
-                    className={styles.actionButtonsImage}
-                  />
+                  {/* <img
+              src="https://cdn-icons-png.flaticon.com/512/2312/2312894.png"
+              alt=""
+              className={styles.actionButtonsImage}
+            /> */}
                   Large
                 </div>
               </div>
@@ -151,9 +188,9 @@ const search = () => {
                 >
                   <span>&#163;</span>
                   <input
-                    type="number"
-                    value={value}
-                    onChange={handelChange}
+                    type="text"
+                    value={value1}
+                    onChange={handleValue}
                     placeholder=" Value ..."
                   />
                 </div>
@@ -163,7 +200,13 @@ const search = () => {
                     setvalue(1);
                   }}
                 >
-                  <input type="text" placeholder=" Additional information" />
+                  <input
+                    style={{ fontSize: "larger" }}
+                    type="text"
+                    value={info}
+                    onChange={handleInfo}
+                    placeholder=" Additional information"
+                  />
                 </div>
               </div>
             </div>
@@ -193,12 +236,47 @@ const search = () => {
                   />
                 </div>
                 <div className={styles.search__inputBox}>
+                  {/* <PlacesAutocomplete
+        value={address}
+        onChange={setAddress}
+        onSelect={handleSelect}
+      >
+        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+          <div>
+            <p>Latitude: {coordinates.lat}</p>
+            <p>Longitude: {coordinates.lng}</p>
+
+            <input {...getInputProps({ placeholder: "Type address" })} />
+
+            <div>
+              {loading ? <div>...loading</div> : null}
+
+              {suggestions.map(suggestion => {
+                const style = {
+                  backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
+                };
+
+                return (
+                  <div {...getSuggestionItemProps(suggestion, { style })}>
+                    {suggestion.description}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </PlacesAutocomplete> */}
+                  {/* <div id="geocoder" class="geocoder">{
+
+        geocoder.onAdd(map)
+      }</div> */}
                   <input
                     placeholder="Pickup"
                     className={styles.search__input}
                     value={pickup}
                     onChange={(e) => setPickUp(e.target.value)}
                   />
+
                   <input
                     placeholder="Dropoff"
                     className={styles.search__input}
@@ -238,9 +316,10 @@ const search = () => {
                 query: {
                   pickup: pickup,
                   dropoff: dropoff,
-                  value,
+                  value: value1,
                   weight,
                   size,
+                  info,
                 },
               }}
             >

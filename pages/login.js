@@ -83,6 +83,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <div className={styles.signup}>Don’t have an account? Sign Up</div>
     </div>
   );
 };

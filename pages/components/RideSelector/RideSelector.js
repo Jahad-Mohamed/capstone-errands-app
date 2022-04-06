@@ -7,8 +7,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { onAuthStateChanged, GoogleAuthProvider, getAuth } from "firebase/auth";
 
-const sizeList = ["small", "medium", "large"];
-const weightList = ["< 5KG", "< 10KG", "< 15KG"];
+const sizeList = ["Small", "Medium", "Large"];
+const weightList = ["< 5kg", "< 10kg", "< 15kg"];
 const RideSelector = (props) => {
   const [rideDuration, setRideDuration] = useState(0);
   const [rideDistance, setRideDistance] = useState(0);
@@ -35,6 +35,7 @@ const RideSelector = (props) => {
     const size = sizeList[props.size - 1];
     const weight = weightList[props.weight - 1];
     const value = props.value;
+    const info = props.info;
 
     try {
       const docRef = await addDoc(collection(db, "orders"), {
@@ -42,6 +43,7 @@ const RideSelector = (props) => {
         weight,
         value,
         vehicle,
+        info,
         email: User.email,
         duration: rideDuration,
         distance: rideDistance.toFixed(2),
@@ -94,14 +96,24 @@ const RideSelector = (props) => {
             />
             <div className={styles.rideSelector__carDetails}>
               <div className={styles.rideSelector__service}>{car.service}</div>
-              <div className={styles.rideSelector__time}>
-                Your ride is {Math.floor(Math.random(15) * 10 + 4)} min away
+              <div className={`${styles.rideSelector__time}  `}>
+                {ride - 1 == index ? (
+                  <span style={{ color: "white" }}>
+                    {" "}
+                    Your ride is {Math.floor(Math.random(15) * 10 + 4)} min away
+                  </span>
+                ) : (
+                  <span>
+                    {" "}
+                    Your ride is {Math.floor(Math.random(15) * 10 + 4)} min away
+                  </span>
+                )}
               </div>
             </div>
             <div>
               {" "}
               You errand will take{" "}
-              {Math.floor((rideDistance * 4) / car.multiplier)} mins tocomplete
+              {Math.floor((rideDistance * 4) / car.multiplier)} mins to complete
             </div>
 
             <div className={styles.rideSelector__price}>

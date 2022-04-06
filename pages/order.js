@@ -58,26 +58,24 @@ export default function order() {
 
               <div>
                 {" "}
-                <h3>Price</h3>
+                <h3>Journey Price</h3>
                 <h3>&#163; {orderData.price}</h3>
+              </div>
+              <div>
+                {" "}
+                <h3>Additional Information</h3>
+                <h3> {orderData.info}</h3>
               </div>
             </>
           ) : (
             ""
           )}
 
-          <div className={styles.homeIcon}>
-            <Link href="/">
-              <div className={styles.search__backButton}>
-                <img
-                  src="https://img.icons8.com/ios-filled/50/000000/left.png"
-                  alt="Back Button"
-                />{" "}
-                <span>Back Home</span>
-              </div>
-            </Link>
-          </div>
+          <div className={styles.homeIcon}></div>
         </div>
+        <Link href="/">
+          <div className={styles.search__backButton}>Return to Home</div>
+        </Link>
       </div>
     </>
   );

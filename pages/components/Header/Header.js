@@ -12,20 +12,6 @@ const Header = () => {
   const auth = getAuth(firebaseApp);
   const [dropdown, setDropdown] = useState(false);
 
-  //Logout Function
-  // useEffect(() => {
-  //   return onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setUser({
-  //         name: user.displayName,
-  //         photoUrl: user.photoURL,
-  //       });
-  //     } else {
-  //       setUser(null);
-  //       router.push("/login");
-  //     }
-  //   });
-  // }, []);
   useEffect(() => {
     onAuthStateChanged(auth, (user1) => {
       if (user1) {
@@ -56,10 +42,6 @@ const Header = () => {
             <Link href="./about">
               <div className={styles.Header__profile}>About</div>
             </Link>
-
-            {/* <div className={styles.Header__profileName}>
-            {user && user.displayName}
-          </div> */}
 
             {user ? (
               <div className={styles.avatar}>

@@ -13,7 +13,7 @@ const Confirm = () => {
 
   const [pickUpCoordinates, setPickUpCoordinates] = useState([0, 0]);
   const [dropOffCoordinates, setDropOffCoordinates] = useState([0, 0]);
-  const { pickup, dropoff, weight, size, value } = router.query;
+  const { pickup, dropoff, weight, size, value, info } = router.query;
 
   // const getPickUpCoordinates = (pickup) => {
   //   console.log(pickup);
@@ -88,6 +88,12 @@ const Confirm = () => {
               href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
               rel="stylesheet"
             />
+            <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+            <link
+              rel="stylesheet"
+              href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+              type="text/css"
+            ></link>
           </Head>
         </div>
         <div className={styles.maps_container}>
@@ -99,6 +105,7 @@ const Confirm = () => {
             size={size}
             weight={weight}
             value={value}
+            info={info}
             pickUpCoordinates={pickUpCoordinates}
             dropOffCoordinates={dropOffCoordinates}
           />

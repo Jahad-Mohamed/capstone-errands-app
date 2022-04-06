@@ -1,8 +1,5 @@
 .main__container {
-  color: #ebeffc;
-}
-
-.main__actionBtnContainer {
+  background: linear-gradient(180deg, #4f7df3 49%, rgba(192, 207, 255, 0) 100%);
 }
 .container {
   height: 100vh;
@@ -12,13 +9,13 @@
 
 .map {
   background-color: #749bfe;
-  flex: 1;
-  height: 50vh;
+  height: 80%;
+  width: 35%;
   overflow: hidden;
   border: 5px solid white;
   border-radius: 3%;
   position: relative;
-  margin: 4rem 6rem;
+  margin: 0rem 2rem;
 }
 
 #map {
@@ -34,7 +31,40 @@
   position: relative;
   margin: 0px auto;
   width: 50%;
-  height: 40px;
+
+  padding: 50px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #ee8a65;
+}
+.map2 {
+  background-color: #749bfe;
+  height: 60vh;
+  width: 95%;
+  overflow: hidden;
+  border: 5px solid white;
+  border-radius: 3%;
+  position: relative;
+  margin: 0rem 2rem;
+}
+
+#map2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 60vh;
+  padding: 5rem;
+}
+#fit2 {
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+
   padding: 50px;
   border: none;
   border-radius: 3px;
@@ -58,7 +88,7 @@
   align-items: center;
   min-height: 2rem;
   max-height: 8rem;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
 }
 .Header_howItworks,
 .Header__profile {
@@ -113,7 +143,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 4rem 1rem;
+  margin: 1rem 1rem;
 }
 
 .actionButtons_search {
@@ -126,6 +156,10 @@
   border-radius: 15%;
   padding: 0.5rem 1rem;
   transition: 0.3s;
+  padding: 2rem 0;
+  font-size: larger;
+  color: #749bfe;
+  font-weight: bold;
 }
 .actionButtons {
   background-color: #ebeffc;
@@ -148,6 +182,8 @@
   color: white;
   transform: scale(1.1);
   cursor: pointer;
+  font-weight: 600;
+  font-size: 4rem;
 }
 .active_value {
   background-color: #749bfe;
@@ -252,8 +288,11 @@
 .search__backButton {
   display: flex;
   align-items: center;
-  background-color: white;
   padding-left: 1rem;
+  width: 40%;
+  margin: 1rem;
+  color: rgb(46, 46, 46);
+  cursor: pointer;
 }
 
 .search__inputBox {
@@ -276,7 +315,7 @@
   display: flex;
   padding: 1rem;
   align-items: center;
-  margin-top: 8rem;
+  margin-top: 1rem;
 }
 
 .search__inputFrom {
@@ -346,9 +385,11 @@
 /*RIDE SELECTOR*/
 
 .rideSelector__section {
+  height: 80%;
+  width: 65%;
   background-color: #fbf9f6;
   overflow-y: scroll;
-  margin: 0rem 6rem;
+  margin: 0rem 2rem;
 }
 
 .rideSelector__title {
@@ -365,9 +406,8 @@
 .rideSelector__vehiclesContainer {
   display: flex;
   flex-direction: column;
-  height: 100%;
-
   margin: 0rem;
+  padding: 0rem 2rem;
 }
 
 .rideSelector__vehicles {
@@ -382,6 +422,11 @@
 .rideSelector__vehicles:hover {
   background-color: #749bfe;
   transition: 1s all ease-in-out;
+  color: white;
+}
+
+.rideSelector__vehicles:hover .rideSelector__time {
+  transition: 0.5s all ease-in-out;
   color: white;
 }
 .active_ride {
@@ -403,7 +448,10 @@
   font-weight: 500;
   margin-bottom: 0.2rem;
 }
-
+.rideSelector__time2 {
+  color: white;
+  font-weight: 800;
+}
 .rideSelector__time {
   color: #749bfe;
   font-weight: 800;
@@ -449,13 +497,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 4rem;
 }
 
 .search__title {
   display: flex;
   justify-content: center;
   color: #749bfe;
+  font-size: 1.8rem;
 }
 
 /* login*/
@@ -466,7 +514,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin: 8rem 0rem;
+  margin: 6rem 0rem 8rem 0rem;
 }
 
 .login__container {
@@ -477,6 +525,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
   border-radius: 16px;
 }
@@ -533,10 +582,11 @@
 }
 
 .login__title {
-  font-size: 1.7rem;
+  font-size: 2.4rem;
   text-align: center;
-  color: white;
-  margin-top: 2rem;
+  color: #4f7df3;
+  margin-top: 3rem;
+  padding-top: 2rem;
 }
 .login__heroContainer {
   border: 1px;
@@ -561,6 +611,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   background-color: #749bfe;
   overflow-x: hidden;
@@ -573,9 +624,15 @@
   left: 1rem;
 }
 
+.signup {
+  font-size: 1.2rem;
+  padding: 1rem;
+  color: white;
+}
+
 .login__logoContainer .Header__logo {
-  font-size: x-large;
-  font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: white;
 }
 .value_textField {
@@ -605,8 +662,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 7rem;
+  gap: 0.5rem;
+  margin-top: 0;
 }
 
 .value_textField input {
@@ -617,6 +674,7 @@
   outline: none;
   background-color: #f2f3f9;
   border-radius: 5px;
+  font-size: larger;
 }
 
 .value_textField span {
@@ -631,15 +689,17 @@
 }
 .Container {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(180deg, #4f7df3 49%, rgba(192, 207, 255, 0) 100%);
 }
 .center_div {
   width: 40%;
-  height: 70%;
+  min-height: 70%;
   padding-bottom: 1rem;
 
   text-align: center;
@@ -657,9 +717,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0rem 1rem;
   align-items: left;
   border-bottom: 1px solid #d9e3d9;
+  bottom: 5px;
+  margin: 0rem 0rem;
 }
 .center_div div h3 {
   font-weight: 500 !important;
@@ -730,22 +792,24 @@
   gap: 2rem;
   align-items: center;
 }
-.action_container {
-}
+/* .action_container {
+} */
 .main__sectionContainer {
-  background: #749bfe;
+  background: linear-gradient(180deg, #4f7df3 49%, rgba(192, 207, 255, 0) 100%);
   margin: 0;
+  padding-bottom: 1rem;
 }
 
 .maps_container {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  padding: 0rem 3rem;
+  flex-direction: row;
+  padding: 0rem 2rem;
   overflow: auto;
-  transform: translateY(5rem);
+  transform: translateY(0rem);
+  margin-top: 10rem;
 }
 @keyframes spin {
   0% {
@@ -807,4 +871,9 @@
 .howItWorks__para {
   font-size: 1rem;
   margin-top: 1rem;
+}
+
+.search__backButton {
+  display: flex;
+  justify-content: center;
 }
