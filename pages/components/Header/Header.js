@@ -63,7 +63,7 @@ const Header = () => {
                     <h3>
                       <Link href="/account">Account</Link>
                     </h3>
-                    <h3 onClick={SignOut}>logout</h3>
+                    <h3 onClick={SignOut}>Logout</h3>
                   </div>
                 )}
               </div>
