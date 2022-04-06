@@ -110,7 +110,7 @@ const RideSelector = (props) => {
                 )}
               </div>
             </div>
-            <div>
+            <div className={styles.distance__time}>
               {" "}
               You errand will take{" "}
               {Math.floor((rideDistance * 4) / car.multiplier)} mins to complete

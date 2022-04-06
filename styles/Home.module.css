@@ -143,7 +143,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 1rem 1rem;
+  margin: 6rem 1rem;
 }
 
 .actionButtons_search {
@@ -315,7 +315,8 @@
   display: flex;
   padding: 1rem;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
 }
 
 .search__inputFrom {
@@ -418,6 +419,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 0.5rem 0rem;
+  height: 8vh;
 }
 .rideSelector__vehicles:hover {
   background-color: #749bfe;
@@ -444,7 +446,7 @@
 }
 .rideSelector__service {
   color: rgb(8, 41, 1);
-  font-size: 1.3rem;
+  font-size: 1.55rem;
   font-weight: 500;
   margin-bottom: 0.2rem;
 }
@@ -455,12 +457,22 @@
 .rideSelector__time {
   color: #749bfe;
   font-weight: 800;
+  font-size: 1.3rem;
 }
 
 .rideSelector__price {
   color: rgb(8, 41, 1);
   font-size: 700;
   margin-left: 3rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #3e8e41;
+}
+
+.distance__time {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgb(53, 53, 53);
 }
 
 /* CONFIRM PAGE*/
